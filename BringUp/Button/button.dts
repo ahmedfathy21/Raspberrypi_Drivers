@@ -1,0 +1,18 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2711";
+
+    fragment@0 {
+        target-path = "/gpio-keys";
+        __overlay__ {
+            custom_button {
+                label = "custom_button";
+                gpios = <&gpio 18 0>;       // Use GPIO 18; flag 0 (adjust polarity as needed)
+                linux,code = <4>;          // Set the key code (choose an appropriate code from Linux input-event-codes.h)
+                debounce-interval = <50>;   // Optional debounce time in milliseconds
+            };
+        };
+    };
+};

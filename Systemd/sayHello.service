@@ -1,0 +1,9 @@
+[Unit]
+Description="Hello GUI APP"
+[Service]
+User=PI
+Restart=on-failure
+ExecStart=/usr/bin/python3 /home/PI/Documents/EhabWorkspace/05_Systemd/startupApp.py
+Environment="DISPLAY=:0"
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,11 @@
+[Unit]
+Description="WiFi Startup"
+After=network.target
+
+[Service]
+User=PI
+Restart=on-failure
+ExecStart=/bin/bash /home/PI/Documents/EhabWorkspace/10_WiFiStartup/wifiStartup.sh
+
+[Install]
+WantedBy=multi-user.target
